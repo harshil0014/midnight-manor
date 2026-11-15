@@ -2,6 +2,12 @@
 
 A top-down multiplayer mansion hunt. One known hunter, five survivor classes, two mansion floors and a courtyard. Repair machines, rescue friends and reach the gates. Play with friends or bots.
 
+## Play online
+
+https://midnight-manor-harshil.flourishingbraid2.chatgpt.site
+
+Host a hunt and share the room code or invitation link. Friends enter their own names and join the same room. The web client is hosted with ChatGPT Sites; the authoritative multiplayer server runs on Render. The free server can need about a minute to wake after inactivity.
+
 ## Run locally
 
 Use Node.js 22 or newer.
@@ -29,3 +35,8 @@ Tests include server-authoritative rules, multiplayer privacy, movement, powers,
 ## Credits
 
 Third-party libraries and licensed art are reused with attribution. See ASSET-CREDITS.md, THIRD-PARTY-NOTICES.txt and the complete component credits/license texts in public/assets/. No proprietary game sprites or ROM data are included.
+
+
+## Separate frontend hosting
+
+Set `VITE_GAME_SERVER_URL` when building a client that runs on a different origin. Set `CLIENT_ORIGIN` on the Node server to the exact permitted frontend origin (comma-separated for multiple origins). These are public endpoint settings, not secrets. Local development defaults to same-origin connections. Public Node hosting must bind `HOST=0.0.0.0` and the provider-assigned `PORT`.
