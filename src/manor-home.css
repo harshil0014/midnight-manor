@@ -1,0 +1,30 @@
+/* The current game has its own identity; the original mystery UI stays archived. */
+body:has(.manor-home){background:#101e2b;color:#edf2ed;font-family:'Segoe UI',sans-serif}
+.manor-home{max-width:1280px;min-height:100svh;margin:auto;padding:0 48px;font-family:'Segoe UI',sans-serif}
+.manor-home-header{height:88px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #314958;gap:20px;padding:0}
+.manor-wordmark{display:flex;align-items:center;gap:12px;color:#edf2ed;text-decoration:none;font-size:14px;font-weight:800;letter-spacing:2px;white-space:nowrap}
+.manor-wordmark>span{display:grid;place-items:center;width:36px;height:38px;border:2px solid #80c9bd;border-radius:10px;color:#9bdfcb;font:bold 24px Georgia,serif;letter-spacing:-4px;padding-right:4px}
+.manor-session-tag{color:#91aaa9;font-size:10px;letter-spacing:1.5px;font-weight:650}
+.manor-home-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(310px,.85fr);gap:64px;align-items:start;padding:54px 0 30px}
+.manor-kicker{display:block;font:750 10px/1.5 'Segoe UI',sans-serif;letter-spacing:2px;color:#91cebd;margin:0 0 15px}
+.manor-intro h1{font:800 clamp(34px,4.4vw,57px)/1.06 'Segoe UI',sans-serif;letter-spacing:-2px;margin:0 0 20px;color:#f2f1e8}.manor-intro h1 em{font-style:normal;color:#91cebd}
+.manor-description{font:15px/1.7 'Segoe UI',sans-serif;color:#b1c3c6;margin:0 0 24px;max-width:520px}
+.manor-facts{display:flex;flex-wrap:wrap;gap:9px 22px;color:#a4b9bd;font:11px/1.5 'Segoe UI',sans-serif}.manor-facts b{font-size:15px;color:#ebddba;margin-right:4px}
+.manor-scene{margin:26px 0 0}.manor-scene img{width:100%;height:auto;display:block;border:1px solid #385465;border-radius:14px}.manor-scene figcaption{color:#8fa9b0;font-size:11px;margin-top:10px;line-height:1.5}
+.manor-play{margin-top:8px;background:#1b303f;border:1px solid #456371;border-top:3px solid #90cbbc;border-radius:16px;padding:30px}
+.manor-play h2{font:750 27px/1.2 'Segoe UI',sans-serif;letter-spacing:-.7px;color:#f0f1e7;margin:0 0 12px}.manor-play>p{font:13px/1.7 'Segoe UI',sans-serif;color:#aec3c7;margin:0 0 26px}
+.manor-play form{margin:0}.manor-play label{display:block;font:700 10px/1.5 'Segoe UI',sans-serif;letter-spacing:1.5px;color:#b5c9c9;margin-bottom:8px}
+.manor-play input{font:14px/1.4 'Segoe UI',sans-serif;background:#102431;border:1px solid #5b7b88;border-radius:8px;padding:13px;color:#f5f3e8;min-width:0;width:100%;outline-offset:3px}.manor-play input::placeholder{color:#8ca6ae;opacity:1}
+.manor-play button{font:750 13px/1.3 'Segoe UI',sans-serif;border:1px solid #668d99;border-radius:8px;padding:14px 16px;background:#2d4f5d;color:#e8f1eb;cursor:pointer;letter-spacing:0}
+.manor-play button:hover{background:#3b6470;border-color:#aad2ca}.manor-play button.primary{display:block;width:100%;background:#9bd7bd;color:#142e32;border:1px solid #9bd7bd;margin-top:12px}.manor-play button.primary:hover{background:#bae9d1}
+.manor-divider{display:flex;align-items:center;gap:12px;margin:26px 0 17px;color:#8ca8b0;font:700 9px/1.5 'Segoe UI',sans-serif;letter-spacing:1.4px;white-space:nowrap}.manor-divider::before,.manor-divider::after{content:'';height:1px;flex:1;background:#42606d}
+.manor-play #hunt-join{display:flex;gap:8px}.manor-play #hunt-code{width:0;flex:1;letter-spacing:2px;text-transform:uppercase;font-weight:700}.manor-play #hunt-join button{white-space:nowrap}
+.manor-play #hunt-resume{width:100%;margin-top:12px;background:transparent;border:1px solid #668d99;color:#c7dbd4}
+.manor-play>p.manor-play-note{font-size:11px;line-height:1.6;color:#93aeb5;margin:22px 0 0;padding-top:16px;border-top:1px solid #385564}
+.manor-home-footer{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;border-top:1px solid #314958;padding:20px 0 24px;color:#8eaab0;font:10px/1.6 'Segoe UI',sans-serif}.manor-home-footer>span{letter-spacing:2px;font-weight:700}.manor-home-footer details{max-width:460px;text-align:right}.manor-home-footer summary{cursor:pointer;color:#bdd0cc;font-size:11px}.manor-home-footer p{font-size:11px;line-height:1.8}
+.manor-sr-only{position:absolute!important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(min-width:1500px){.manor-home-grid{padding-top:70px}}
+@media(max-width:850px){.manor-home{padding:0 24px}.manor-home-grid{gap:26px;grid-template-columns:minmax(0,1fr) minmax(290px,.9fr);padding-top:36px}.manor-play{padding:23px}.manor-session-tag{font-size:8px}.manor-intro h1{letter-spacing:-1px;font-size:38px}}
+@media(max-width:650px){.manor-home{padding:0 20px}.manor-home-header{height:72px;gap:10px}.manor-wordmark{font-size:11px;letter-spacing:1.5px;gap:8px}.manor-wordmark>span{width:30px;height:33px;font-size:21px}.manor-session-tag{font-size:8px;max-width:92px;text-align:right;line-height:1.6;letter-spacing:.7px}.manor-home-grid{display:flex;flex-direction:column;gap:26px;padding:30px 0}.manor-intro{display:contents}.manor-intro>.manor-kicker{order:0;margin:0}.manor-intro h1{order:1;font-size:40px;margin:-10px 0 0}.manor-description{order:2;margin:-8px 0 0;font-size:13px}.manor-facts{order:3;font-size:10px;gap:8px 18px;margin:-10px 0 0}.manor-play{order:4;width:100%;margin:0;padding:23px}.manor-play h2{font-size:25px}.manor-scene{order:5;width:100%;margin:0}.manor-home-footer{gap:10px;font-size:9px}.manor-home-footer>span{max-width:150px;letter-spacing:1px}.manor-home-footer details{flex:1}.manor-play input{font-size:16px}.manor-home .manor-kicker{font-size:9px}}
+.hunt-brand .manor-hud-mark{display:grid;place-items:center;width:29px;height:31px;border:1px solid #80c9bd;border-radius:8px;color:#a4dfc8;font:bold 21px Georgia,serif;flex:none}
+@media(max-width:700px){.hunt-brand .manor-hud-mark{width:23px;height:25px;font-size:17px}.hunt-brand small{font-size:6px;letter-spacing:1px}}

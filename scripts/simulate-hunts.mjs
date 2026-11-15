@@ -1,0 +1,6 @@
+import {create,addPlayer,act,tick} from '../hunt.mjs';
+import {fits} from '../hunt-world.mjs';
+import fs from 'node:fs/promises';
+const size=+(process.env.PLAYERS||8),seeds=process.argv.slice(2).map(Number),runs=[];
+for(const seed of seeds.length?seeds:[11,23,37,51,67,81]){const r=create('Host',1000,seed);r.players[0].bot=true;r.players[0].connected=false;for(let i=1;i<size;i++)addPlayer(r,'Bot '+i,true,1000);act(r,r.players[0],{action:'setKiller',target:r.players[seed%size].id},1000);act(r,r.players[0],{action:'start'},1000);let unsafe=0,ticks=0;for(let t=1050;t<=601050&&r.phase!=='ended';t+=50){tick(r,t,.05);ticks++;for(const p of r.players)if(!['eliminated','escaped','lost'].includes(p.status)&&!fits(r.positions[p.id].floor,r.positions[p.id].x,r.positions[p.id].y))unsafe++;}const result={seed,size,winner:r.winner,seconds:ticks*.05,completed:Object.values(r.machines).filter(m=>m.done).length,...r.stats,portals:r.portals.length,unsafe,statuses:r.players.map(p=>p.status)};runs.push(result);console.log(JSON.stringify(result));}
+const label=(process.env.LABEL||'').replace(/[^a-z0-9_-]/gi,'').slice(0,32);await fs.mkdir(new URL('../validation/',import.meta.url),{recursive:true});await fs.writeFile(new URL('../validation/HUNT-BOT-SOAK-'+size+(label?'-'+label:'')+'.json',import.meta.url),JSON.stringify(runs,null,2));

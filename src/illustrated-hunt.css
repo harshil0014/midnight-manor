@@ -1,0 +1,43 @@
+/* Illustrated-pixel mansion: quiet surfaces and crisp sprites, readable modern UI.
+   Original styling; no game artwork or proprietary fonts are reproduced. */
+body:has(.hunt-app){background:#17252f;color:#f0f4f0}
+.hunt-app,.hunt-card,.survival-entry{font-family:'Segoe UI',Trebuchet MS,sans-serif}
+.hunt-app button,.hunt-card button,.hunt-app select,.hunt-card select{font-family:inherit;font-weight:650;letter-spacing:.15px;border-radius:8px;box-shadow:none}
+.hunt-header{background:transparent;border-bottom:1px solid #3b535f}
+.hunt-brand span{font-family:inherit;letter-spacing:1.5px;font-size:12px}.hunt-brand small{letter-spacing:2px}
+.hunter-public{border:1px solid #b66a64;border-radius:20px;background:#48313b;color:#ffd2bc;font-size:11px}
+.hunt-status{background:#233640;border:0;border-radius:8px;padding:5px 12px}
+.hunt-progress{height:10px;border:0;border-radius:8px;overflow:hidden;background:#14232b}.hunt-progress i{background:#6cceac;border-radius:8px;transition:width .25s}
+.hunt-stage{border:1px solid #526b73;border-radius:10px;background:#17252f}
+.palace-app .hunt-location{border:1px solid #536870;border-radius:18px;background:#f0e9d7;color:#263d46;font:700 12px/1.2 'Segoe UI',sans-serif;padding:7px 16px}
+.palace-app .hunt-task-tab,.palace-app #hunt-track,.palace-app #hunt-context{border:1px solid #607982;border-radius:8px;background:#223944f5;color:#f1eedc;font-family:inherit}
+.palace-app #hunt-context{font-size:11px;line-height:1.5}
+.palace-app #hunt-track{border-left:4px solid #edc46a;font-size:12px;padding:9px 12px}.palace-app #hunt-track small{font-size:10px;color:#bed2d4}
+.palace-app .hunt-actions button{border:2px solid #8faeb6;border-bottom-width:2px;border-radius:12px;background:#2c4d5a;color:#f1f8f5;min-height:64px;font-size:11px;transition:background .1s,transform .1s}
+.palace-app .hunt-actions button::before{font:800 20px/1.1 'Segoe UI',sans-serif;color:#f4d88e;margin-bottom:5px}
+.palace-app .hunt-actions button:disabled{opacity:.48;filter:saturate(.4)}
+.palace-app .hunt-actions #hunt-attack{background:#9c4552;border-color:#ef9b92}.palace-app .hunt-actions #hunt-power{background:#505d91;border-color:#aeb8ed}.palace-app .hunt-actions #hunt-blackout{background:#574064;border-color:#c0a0d0}
+#hunt-ability-card{border-radius:10px;border-color:#68838d;border-left:3px solid #a5b7ea;background:#213540f5;font-family:inherit}
+#hunt-ability-card b{font-size:13px}#hunt-ability-card small{font-size:11px;line-height:1.35}#hunt-ability-card strong{font-size:10px}
+#hunt-radar{border:2px solid #7c9ca4;border-top:3px solid #ebca85;border-radius:10px;overflow:hidden}#hunt-radar span{font-family:inherit;font-size:10px}#hunt-radar small{font-family:inherit;font-size:8px;letter-spacing:0}
+.hunt-toolbar{border-color:#405c66}.hunt-toolbar button{border:1px solid #607c87;background:#263e49;color:#e7f1ee;font-size:11px;padding:7px 12px}.hunt-toolbar>span{font-family:inherit;font-size:11px}
+#hunt-drawer{background:#101e2bd9;backdrop-filter:none}
+.hunt-card{background:#f1eddf;color:#283c47;border:2px solid #80959c;border-radius:16px;box-shadow:none;font-family:'Segoe UI',sans-serif;padding:28px;line-height:1.45}
+.hunt-card h2{font-family:inherit;font-size:30px;letter-spacing:-.6px;color:#233b48}.hunt-card p{font:14px/1.6 'Segoe UI',sans-serif;color:#4b6068}
+.hunt-card .eyebrow{font:750 11px/1.5 'Segoe UI',sans-serif;letter-spacing:2px;color:#637778}
+.hunt-card button{border:1px solid #859a9c;background:#dce6dc;color:#243d47;padding:10px 13px;font-size:12px}.hunt-card button:hover{background:#c8ddcf;border-color:#476e72}.hunt-card button.primary{background:#2e756b;color:#fff5da;border-color:#24584f}.hunt-card button.selected{background:#c9a65c;color:#253b41;border-color:#776331}
+.hunt-card .class-choices>div{background:#e4e4d7;border:1px solid #b3bdb3;border-radius:9px;padding:12px}.hunt-card .class-choices b{color:#324c57;font-size:13px}.hunt-card .class-choices small{color:#596b6d;font-size:11px;line-height:1.45}
+.lobby-guests>div{border:1px solid #b3bdb5;border-radius:9px;background:#e1e8de;padding:10px}.lobby-guests b{font-size:13px}.lobby-guests span{font-size:10px;color:#536c71}
+.hunt-speed-setting{border-radius:10px;background:#e0e7dc}.hunt-card .objective-grid button{border-radius:10px;padding:12px}.objective-grid b{font-size:14px}.objective-grid small{font-size:11px;color:#4f6c6c}
+.task-meter{display:block;height:5px;background:#bdc9bf;border-radius:4px;overflow:hidden;margin-top:10px}.task-meter i{display:block;height:100%;background:#388576;border-radius:4px}.objective-grid button[data-done='true']{background:#d2e5d7;border-color:#82aa8d}.objective-grid button[data-here='true']{border-left:4px solid #d4a74c}
+.survival-guest span{font-size:11px;color:#4e666c}.end-survivors>div{border-radius:9px;border-color:#a2b7a9;background:#dce7d8}
+.hunt-card .hunt-close{border-radius:50%;width:34px;height:34px;padding:0;background:#dae2dc;color:#25404a;font-size:24px}
+@media(max-width:700px){
+ .hunt-app{padding:0 5px 5px}.hunt-stage{border-radius:8px}.hunt-header{gap:6px}.hunt-brand span{font-size:9px}.hunt-brand small{font-size:7px}.hunter-public{font-size:9px;padding:4px 6px;margin-left:0}
+ .palace-app .hunt-location{font-size:10px;padding:5px 8px;max-width:66%}.palace-app .hunt-actions button{min-height:51px;font-size:9px;border-radius:10px}.palace-app .hunt-actions button::before{font-size:17px}
+ .palace-app #hunt-context{font-size:9px}.palace-app #hunt-track{font-size:10px;padding:6px}.palace-app #hunt-track small{font-size:9px}
+ #hunt-ability-card b{font-size:11px}#hunt-ability-card small{font-size:9px}#hunt-ability-card strong{font-size:8px}
+ .hunt-toolbar button{font-size:9px;padding:5px 7px}.hunt-toolbar>span{font-size:9px}.hunt-card{padding:25px 14px;border-radius:13px}.hunt-card h2{font-size:25px}.hunt-card p{font-size:12px}.hunt-card .class-choices small{font-size:10px}.hunt-card .class-choices b{font-size:12px}
+}
+
+.hunt-card .hunt-speed-setting b{color:#314c58;font-size:13px}.hunt-card .hunt-speed-setting small{color:#536e70;font-size:11px;letter-spacing:0}.hunt-card .hunt-speed-setting select{font:650 12px Segoe UI,sans-serif;letter-spacing:0}
