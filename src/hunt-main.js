@@ -71,7 +71,7 @@ import {homeMarkup, GAME_NAME} from "./manor-home.js";
 document.title = GAME_NAME;
 const $ = (s) => document.querySelector(s),
   app = $("#app"),
-  socket = io(),
+  socket = io(import.meta.env.VITE_GAME_SERVER_URL?.trim() || undefined),
   seatKey = "haveli-hunt-seat";
 const esc = (s) =>
   String(s ?? "").replace(
@@ -199,8 +199,15 @@ function command(action, data = {}) {
     }),
   );
 }
+function entranceConnection() {
+  const status = $("#manor-server-status");
+  if (!status) return;
+  status.hidden = socket.connected;
+  document.querySelectorAll(".manor-play button").forEach(b => b.disabled = !socket.connected);
+}
 function entrance() {
   app.innerHTML = homeMarkup(!!sessionStorage.getItem(seatKey));
+  entranceConnection();
   $("#hunt-host").onsubmit = (e) => {
     e.preventDefault();
     unlockAudio();
@@ -1659,6 +1666,7 @@ document.addEventListener("visibilitychange", () => {
   if (document.hidden) clearInput();
 });
 socket.on("connect", () => {
+  entranceConnection();
   if ($("#hunt-connection")) $("#hunt-connection").textContent = "● Connected";
   if ($("#hunt-disconnected")) $("#hunt-disconnected").hidden = true;
   if (state) {
@@ -1667,9 +1675,11 @@ socket.on("connect", () => {
   }
 });
 socket.on("disconnect", () => {
+  entranceConnection();
   clearInput();
   if ($("#hunt-disconnected")) $("#hunt-disconnected").hidden = false;
 });
+socket.on("connect_error", entranceConnection);
 socket.on("state", (s) => {
   const prev = state;
   state = s;

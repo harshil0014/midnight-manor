@@ -13,7 +13,8 @@ const server=http.createServer(async(req,res)=>{
  if(vite)return vite.middlewares(req,res);
  try{let name=decodeURIComponent(req.url.split('?')[0]);if(name==='/')name='/index.html';let filename=path.resolve(root,'dist','.'+name);if(!filename.startsWith(path.join(root,'dist')+path.sep))throw Error();const bytes=await fs.readFile(filename);if(path.extname(filename)==='.html')res.setHeader('Cache-Control','no-store');res.setHeader('Content-Type',({'.html':'text/html','.js':'text/javascript','.css':'text/css','.png':'image/png'}[path.extname(filename)]||'application/octet-stream'));res.end(bytes);}catch{res.statusCode=404;res.end('Not found');}
 });
-const io=new Server(server,{maxHttpBufferSize:8192,serveClient:false});
+const clientOrigins=(process.env.CLIENT_ORIGIN||'').split(',').map(s=>s.trim()).filter(Boolean);
+const io=new Server(server,{maxHttpBufferSize:8192,serveClient:false,...(clientOrigins.length?{cors:{origin:clientOrigins}}:{})});
 export const rooms=new Map();
 io.on('connection',socket=>{
  let room,player,rate=0,windowAt=Date.now();
